@@ -1,0 +1,1576 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 1550px;
+    min-height: 900px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden;
+}
+
+:root {
+    --page-background: #212121;
+    --navbar-background: #191919;
+    --dropbutton-top-background: #212121;
+    --dropbutton-bottom-background: #2E2E2E;
+    --text-color: white;
+    --dropbuttonhover-top-background: #212121;
+    --button-background: #2E2E2E;
+    --closebutton-background: #212121;
+    --buttonhover-background: #3B3B3B;
+    --svg-background: white;
+    --svg-images-background: #0B58A8;
+    --dropbuttondropdownhover: #3B3B3B;
+    --content-display: none;
+}
+
+#maindiv {
+    background: var(--page-background);
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    user-select: none;
+}
+
+#navbar {
+    height: 40px;
+    width: 100%;
+    background: var(--navbar-background);
+    border-radius: 20px 20px 0px 0px;
+    -webkit-app-region: drag;
+    position: relative;
+    transition: 0.2s;
+}
+
+#logo {
+    margin-left: 20px;
+    margin-top: 6px;
+    float: left;
+}
+
+#navbuttons {
+    height: 40px;
+    width: 140px;
+    float: right;
+    right: 10px;
+    -webkit-app-region: none;
+}
+
+#navbuttons .navbuttonbackground {
+    fill: var(--closebutton-background);
+    transition: 0.2s;
+}
+
+#navbuttons svg {
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer !important;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#navbuttons svg:hover .path {
+    fill: white;
+    transition: 0.2s;
+}
+
+#toolbar {
+    height: 30px;
+    width: 100%;
+    background: var(--navbar-background);
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+
+/*-----------------------*/
+
+.toolbarbuttondropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.toolbarbuttondropdown .toolbarbutton {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    margin: 0;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.2s;
+    border-radius: 10px 10px 0px 0px;
+    background: var(---navbar-background);
+}
+
+.toolbarbuttondropdown:hover .toolbarbutton {
+    background: var(--dropbuttonhover-top-background);
+    transition: 0.2s;
+}
+
+.toolbarbuttondropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--dropbutton-top-background);
+    min-width: 160px;
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 0px 10px 10px 10px;
+    transition: 0.2s;
+}
+
+.toolbarbuttondropdown:hover .toolbarbuttondropdown-content {
+    display: block;
+    animation: toolbardropdownshowanimation 0.2s;
+}
+
+@keyframes toolbardropdownshowanimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.toolbardropdownbutton {
+    color: var(--text-color);
+    float: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+    font-size: 12px;
+    border-radius: 0px 10px 10px 10px;
+}
+
+.toolbardropdownbutton:hover {
+    transition: 0.2s;
+    background: var(--dropbuttondropdownhover);
+}
+
+
+/*------------------------------------------------*/
+
+.toolbarbuttondropdown2 {
+    float: left;
+    width: 100%;
+}
+
+.toolbarbuttondropdown2 .toolbarbutton2 {
+    font-size: 12px;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    margin: 0;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.2s;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    border-radius: 0px 10px 10px 10px;
+}
+
+.toolbarbuttondropdown2:hover .toolbarbutton2 {
+    background: var(--dropbuttondropdownhover);
+    transition: 0.2s;
+}
+
+.toolbarbuttondropdown-content2 {
+    display: none;
+    position: absolute;
+    float: right;
+    right: 0;
+    transform: translate3d(100%, -30px, 0);
+    background: var(--dropbutton-top-background);
+    min-width: 160px;
+    box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.toolbarbuttondropdown2:hover .toolbarbuttondropdown-content2 {
+    display: block;
+    animation: toolbardropdownshowanimation2 0.3s;
+}
+
+@keyframes toolbardropdownshowanimation2 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.toolbardropdownbutton2 {
+    color: var(--text-color);
+    float: none;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: block;
+    text-align: left;
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    background: transparent;
+    outline: none;
+    border: none;
+    transition: 0.2s;
+    font-size: 12px;
+    border-radius: 10px;
+}
+
+.toolbardropdownbutton2:hover {
+    transition: 0.2s;
+    background: var(--dropbuttondropdownhover);
+}
+
+#startscreencontent {
+    position: absolute;
+    z-index: 90;
+    height: 100%;
+    width: 100%;
+    transition: 0.2s;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#graybackgroundbanner {
+    background: rgba(0, 0, 0, 0.4);
+    height: calc(100% - 40px);
+    width: 100%;
+    position: absolute;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#graybackgroundbanner1 {
+    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 0px 0px 20px 20px;
+}
+
+#startscreen {
+    height: 650px;
+    width: 738px;
+    margin-left: calc((100% - 738px) / 2);
+    background: var(--page-background);
+    position: absolute;
+    border-radius: 28px;
+    transition: 0.2s;
+}
+
+#startscreenimage {
+    height: 150px;
+    width: 694px;
+    border-radius: 20px;
+    background: var(--navbar-background);
+    margin-top: 22px;
+    margin-left: 22px;
+}
+
+#startscreenpages {
+    height: 432px;
+    width: 694px;
+    margin-left: 22px;
+    margin-top: 22px;
+    background: var(--navbar-background);
+    border-radius: 20px;
+}
+
+#startscreenleftsidepnel {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--dropbutton-bottom-background);
+    width: 230px;
+    border-radius: 20px;
+    float: left;
+}
+
+#startscreenleftsidepnel button {
+    height: 50px;
+    color: var(--text-color);
+    width: 180px;
+    background: var(--navbar-background);
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    margin-left: 25px;
+    font-size: 20px;
+}
+
+#startscreenleftsidepnel button:hover {
+    transition: 0.2s;
+    background: var(--dropbuttondropdownhover);
+    /* transform: scale(1.1); */
+}
+
+#startscreenrightcontent {
+    height: 100%;
+    float: right;
+    border-radius: 20px;
+    width: 464px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    right: 0;
+}
+
+.svgimagebackground {
+    transition: 0.5s;
+    fill: var(--svg-images-background) !important;
+}
+
+#startscreenuserinfopage {
+    height: 432px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    z-index: 5;
+    transition: 0.2s;
+    overflow: auto;
+}
+
+#startscreennewprojectspage {
+    height: 432px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    z-index: 4;
+    transition: 0.2s;
+    overflow: auto;
+    transform: translate(0px, 100%);
+}
+
+#startscreenlastfilespage {
+    height: 432px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    z-index: 3;
+    transition: 0.2s;
+    overflow: auto;
+    transform: translate(0px, 100%);
+}
+
+#startscreenhelppage {
+    height: 432px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    z-index: 2;
+    transition: 0.2s;
+    overflow: auto;
+    transform: translate(0px, 100%);
+}
+
+#startscreensettingspage {
+    height: 432px;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
+    z-index: 1;
+    transition: 0.2s;
+    overflow: auto;
+    transform: translate(0px, 100%);
+}
+
+
+/*----------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(53, 53, 53);
+    border: 0px solid #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--page-background);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--navbar-background);
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+/*---------------------------------------*/
+
+.newfilestopleft {
+    margin-top: 18px;
+    margin-left: 36px;
+}
+
+.newfilestopright {
+    margin-top: 18px;
+    margin-left: 30px;
+}
+
+.newfilesleft {
+    margin-top: 18px;
+    margin-left: 36px;
+}
+
+.newfilesright {
+    margin-top: 18px;
+    margin-left: 30px;
+}
+
+.newfiles {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.newfiles:hover {
+    transform: scale(1.08);
+    transition: 0.2s;
+}
+
+
+/*-----------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------*/
+
+#content {
+    height: calc(100% - 70px);
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    visibility: hidden;
+    grid-template-columns: 350px calc(100% - 670px) 320px;
+    /*WIDTH*/
+    grid-template-rows: 80px calc(100% - 140px) 60px;
+    /*Height*/
+    grid-template-areas: 'editorleftsidebar editortoptoolbar editorrightsidebar' 'editorleftsidebar editorwindow editorrightsidebar' 'editorleftsidebar editorbottomtoolbar editorrightsidebar';
+}
+
+#editorleftsidebar {
+    grid-area: editorleftsidebar;
+    background: var(--dropbutton-bottom-background);
+    border-radius: 0px 0px 0px 20px;
+}
+
+#editorleftsidebar .tabsdivleft {
+    height: 40px;
+    width: 100%;
+    background: var(--navbar-background);
+}
+
+#editortoptoolbar {
+    grid-area: editortoptoolbar;
+    background: var(--dropbutton-bottom-background);
+}
+
+#editorwindow {
+    grid-area: editorwindow;
+    background: var(--page-background);
+}
+
+#editorbottomtoolbar {
+    grid-area: editorbottomtoolbar;
+    background: var(--dropbutton-bottom-background);
+}
+
+#editorrightsidebar {
+    grid-area: editorrightsidebar;
+    background: var(--dropbutton-bottom-background);
+    border-radius: 0px 0px 20px 0px;
+}
+
+#editorrightsidebar .tabsdivright {
+    height: 40px;
+    width: 100%;
+    background: var(--navbar-background);
+}
+
+.tabsdivleft button,
+.tabsdivright button {
+    height: 40px;
+    width: 50%;
+    background: var(--page-background);
+    float: left;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tabsdivleft button:hover,
+.tabsdivright button:hover {
+    transition: 0.2s;
+    background: var(--dropbuttondropdownhover);
+}
+
+#editorleftsidebarcontentelements {
+    width: 350px;
+    height: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transition: 0.2s;
+}
+
+#editorleftsidebarcontentplugins {
+    width: 350px;
+    height: 100%;
+    transform: translate(-100%, 0);
+    overflow-y: auto;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transition: 0.2s;
+}
+
+#editorrightsidebarcontentcss {
+    width: 320px;
+    height: 100%;
+    overflow-y: auto;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transition: 0.2s;
+    direction: rtl;
+}
+
+#editorrightsidebarcontentlogic {
+    width: 320px;
+    height: 100%;
+    transform: translate(100%, 0);
+    overflow-y: auto;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    transition: 0.2s;
+    direction: rtl;
+}
+
+.csspropertie {
+    height: 30px;
+    border-radius: 10px;
+    background: var(--navbar-background);
+    color: var(--text-color);
+    width: 260px;
+    margin-right: 30px;
+    margin-top: 10px;
+    transition: 0.2;
+}
+
+.csspropertie p {
+    float: left;
+    padding-left: 25px;
+    padding-top: 6px;
+    font-size: 14px;
+    color: var(--text-color);
+    margin: 0;
+    transition: 0.2s;
+    width: 50px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.csspropertie .cssfield {
+    background: var(--page-background);
+    height: 30px;
+    width: 90px;
+    margin: 0;
+    padding: 0;
+    float: left;
+    border-radius: 10px;
+    transition: 0.2s;
+    outline: none;
+    border: none;
+    text-align: center;
+    padding-left: 10px;
+    color: var(--text-color);
+    direction: ltr;
+    -webkit-appearance: none;
+    margin-left: 25px;
+}
+
+.csspropertie select {
+    width: 60px;
+    background: var(--page-background);
+    border: none;
+    outline: none;
+    height: 30px;
+    border-radius: 10px;
+    color: var(--text-color);
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+#editorrightsidebarcontentcss hr {
+    border: 1px solid var(--navbar-background);
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+#content hr {
+    border: 1px solid var(--navbar-background);
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition: 0.2s;
+}
+
+.leftelements {
+    margin-left: 26px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+    width: 132px;
+    height: 77px;
+    float: left;
+}
+
+.leftelements:hover {
+    transition: 0.2s;
+    transform: scale(1.08);
+}
+
+.createlogicbutton {
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: var(--navbar-background);
+    width: 260px;
+    margin-right: 30px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+    margin-bottom: 15px;
+}
+
+.createlogicbutton:hover {
+    transition: 0.2s;
+    transform: scale(1.04);
+    background: var(--dropbuttondropdownhover);
+}
+
+#marketplace {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    display: none;
+    width: 100%;
+    height: calc(100% - 40px);
+    border-radius: 0px 0px 20px 20px;
+    z-index: 100;
+    transition: 0.2s;
+}
+
+#marketplacecontent {
+    height: 700px;
+    width: 1200px;
+    margin-left: calc((100% - 1200px) / 2);
+    transition: 0.2s;
+    background: var(--page-background);
+    border-radius: 28px;
+    position: relative;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.marketplacenavbar {
+    height: 60px;
+    width: 1200px;
+    border-radius: 20px;
+    background: var(--dropbutton-bottom-background);
+    position: fixed;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgb(0, 0, 0, 60%);
+}
+
+.marketplacenavbar button {
+    height: 40px;
+    width: 170px;
+    float: left;
+    margin-left: 17px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 10px;
+    background: var(--navbar-background);
+    transition: 0.2s;
+}
+
+.marketplacenavbar button:hover {
+    transition: 0.2s;
+    transform: scale(1.04);
+    background: var(--buttonhover-background);
+}
+
+.marketplacenavbar input {
+    height: 40px;
+    width: 400px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 20px 0px 0px 20px;
+    color: var(--text-color);
+    text-align: center;
+    float: left;
+    background: var(--navbar-background);
+    margin-top: 10px;
+    margin-left: 223px;
+    transition: 0.2s;
+}
+
+.marketplacenavbar input:focus {
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+.marketplacenavbar .search {
+    background: var(--navbar-background);
+    margin-top: 10px;
+    margin-left: 0px;
+    border-radius: 0px 20px 20px 0px;
+    width: 40px;
+    height: 42px;
+    float: left;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.marketplacenavbar .search:hover {
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+    color: var(-);
+}
+
+.search svg {
+    margin-top: 8px;
+    margin-left: 5px;
+    transition: 0.2s;
+}
+
+.marketplacenavbar .tiles {
+    margin-left: 237px;
+    float: left;
+    margin-top: 13px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.marketplacenavbar .closebutton {
+    margin-left: 23px;
+    margin-top: 10px;
+    float: left;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.marketplacenavbar .closebutton:hover .closebuttonbackground {
+    fill: var(--buttonhover-background);
+    transition: 0.2s;
+}
+
+.marketplacecontents {
+    margin-top: 40px;
+    overflow: scroll;
+    height: 100%;
+}
+
+.marketplaceobject {
+    height: 300px;
+    width: 270px;
+    background: var(--dropbutton-bottom-background);
+    float: left;
+    margin-left: 17px;
+    border-radius: 20px;
+    margin-top: 57px;
+}
+
+.marketplaceobject .marketplaceobjectimg {
+    border-radius: 20px;
+    background: var(--navbar-background);
+    width: 240px;
+    height: 110px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.marketplaceobject .text {
+    height: 100px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.marketplaceobject p {
+    padding-left: 15px;
+    padding-right: 15px;
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+.marketplaceobject button {
+    height: 40px;
+    width: 170px;
+    float: left;
+    margin-left: 51px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    background: var(--navbar-background);
+    transition: 0.2s;
+    margin-top: 12px;
+}
+
+.marketplaceobject button:hover {
+    transition: 0.2s;
+    transform: scale(1.04);
+    background: var(--buttonhover-background);
+}
+
+#webeditor {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+#scripteditorwindow {
+    display: none;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: var(--page-background);
+    transform: translate(0, -100%);
+}
+
+#scripteditorwindow .backscript {
+    background-image: url('../img/gitter.png');
+    background-repeat: repeat;
+    background-size: 600px 300px;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+#EditorEdit {
+    cursor: pointer;
+    background: var(--buttonhover-background);
+    width: 180px;
+    height: 30px;
+    float: left;
+}
+
+#ScriptEdit {
+    cursor: pointer;
+    background: var(--page-background);
+    width: 180px;
+    height: 30px;
+    float: left;
+}html,
+body {
+    margin: 0;
+    padding: 0;
+    max-width: 700px;
+    max-height: 500px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow: hidden;
+}
+
+:root {
+    --page-background: #212121;
+    --navbar-background: #191919;
+    --text-color: white;
+    --button-background: #2E2E2E;
+    --closebutton-background: #212121;
+    --buttonhover-background: #3B3B3B;
+    --svg-background: white;
+    --svg-images-background: #0B58A8;
+}
+
+#maindiv {
+    background: var(--page-background);
+    border-radius: 20px;
+    margin: 0;
+    padding: 0;
+    height: 500px;
+    width: 700px;
+    user-select: none;
+}
+
+#logodiv {
+    height: 500px;
+    width: 700px;
+    background: var(--page-background);
+    position: absolute;
+    border-radius: 20px;
+    z-index: 100;
+    -webkit-app-region: none;
+}
+
+#logodiv img {
+    width: 500px;
+    height: auto;
+    margin-top: 210px;
+    margin-left: 100px;
+}
+
+#navbar {
+    height: 40px;
+    width: 700px;
+    background: var(--navbar-background);
+    border-radius: 20px 20px 0px 0px;
+    -webkit-app-region: drag;
+    position: relative;
+    transition: 0.5s;
+}
+
+#navbar h2 {
+    color: var(--text-color);
+    float: left;
+    margin-left: 20px;
+    margin-top: 6px;
+    padding: 0;
+    transition: 0.5s;
+}
+
+#logo {
+    margin-left: 20px;
+    margin-top: 6px;
+    float: left;
+}
+
+#navbuttons {
+    height: 40px;
+    width: 100px;
+    float: right;
+    right: 10px;
+    -webkit-app-region: none;
+}
+
+#navbuttons .navbuttonbackground {
+    fill: var(--closebutton-background);
+    transition: 0.5s;
+}
+
+#navbuttons svg {
+    margin-top: 8px;
+    margin-left: 10px;
+    cursor: pointer !important;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#navbuttons svg:hover .path {
+    fill: white;
+    transition: 0.2s;
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 1s infinite;
+    animation-fill-mode: both;
+}
+
+.fadeOutNone {
+    animation-name: fadeOutNone;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOutNone {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.fadeOutLeft {
+    animation-name: fadeOutLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+        transform: translate3d(0, -500px, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, -500px, 0);
+    }
+}
+
+#indicator {
+    height: 20px;
+    width: 160px;
+    position: absolute;
+    bottom: 8px;
+    margin-left: 270px;
+    z-index: 90;
+}
+
+#indicator1,
+#indicator2,
+#indicator3,
+#indicator4 {
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    margin-right: 15px;
+    background: var(--button-background);
+    float: left;
+    transition: 0.5s;
+}
+
+.indicatoractive {
+    background: white !important;
+    transition: 0.5s;
+}
+
+#indicator5 {
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    background: var(--button-background);
+    float: left;
+    transition: 0.5s;
+}
+
+#page1 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transition: 0.5s;
+}
+
+#page1startdiv {
+    width: 660px;
+    height: 250px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--page-background), var(--navbar-background));
+    margin-left: 21px;
+    margin-top: 20px;
+}
+
+#page1nextbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: absolute;
+    transition: 0.2s;
+    right: 0;
+    margin-top: 87px;
+    z-index: 8;
+    margin-right: 21px;
+}
+
+#page1nextbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page1nextbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page2 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transform: translate(100%, 0);
+    transition: 0.5s;
+}
+
+#darkmode {
+    position: relative;
+    float: left;
+    transition: 0.2s;
+    margin-left: 110px;
+    cursor: pointer;
+}
+
+#lightmode {
+    position: relative;
+    float: left;
+    transition: 0.2s;
+    margin-left: 50px;
+    cursor: pointer;
+}
+
+#darkmode:hover,
+#lightmode:hover {
+    transform: scale(1.08);
+    transition: 0.2s;
+}
+
+.pagename {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 20px;
+    padding-left: 21px;
+    padding-top: 20px;
+    transition: 0.5s !important;
+    color: var(--text-color);
+}
+
+#page2backbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    left: 0;
+    margin-top: 88px;
+    z-index: 8;
+    margin-left: 21px;
+    float: left;
+}
+
+#page2backbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page2backbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page3 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transform: translate(100%, 0);
+    transition: 0.5s;
+}
+
+.backgroundlogin {
+    fill: var(--svg-background);
+}
+
+#page4 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transform: translate(100%, 0);
+    transition: 0.5s;
+}
+
+#page4 svg {
+    margin-left: 21px;
+}
+
+#page5 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transform: translate(100%, 0);
+    transition: 0.5s;
+}
+
+#page5 svg {
+    margin-left: 21px;
+}
+
+#page6 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transform: translate(100%, 0);
+    transition: 0.5s;
+}
+
+#page6 svg {
+    margin-left: 21px;
+}
+
+#page7 {
+    background: var(--page-background);
+    height: 460px;
+    width: 700px;
+    border-radius: 0px 0px 20px 20px;
+    margin-left: 0;
+    padding: 0;
+    position: absolute;
+    color: var(--text-color);
+    transform: translate(100%, 0);
+    transition: 0.5s;
+}
+
+#page7 svg {
+    margin-left: 21px;
+}
+
+#page3 svg:hover {
+    transition: 0.2s;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
+#trialtest {
+    margin-left: 21px;
+    margin-top: 0px;
+    position: relative;
+    transition: 0.2s;
+}
+
+#login {
+    margin-left: 21px;
+    margin-top: 20px;
+    position: relative;
+    transition: 0.2s;
+}
+
+#page3backbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    left: 0;
+    margin-top: 30px;
+    z-index: 8;
+    margin-left: 21px;
+    float: left;
+}
+
+#page3backbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page3backbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+.text {
+    fill: var(--text-color);
+}
+
+#page4backbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    left: 0;
+    margin-top: 84px;
+    z-index: 8;
+    margin-left: 21px;
+    float: left;
+}
+
+#page4backbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page4backbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page4nextbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    right: 0;
+    margin-top: 84px;
+    z-index: 8;
+    margin-right: 21px;
+    float: right;
+}
+
+#page4nextbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page4nextbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page5backbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    left: 0;
+    margin-top: 84px;
+    z-index: 8;
+    margin-left: 21px;
+    float: left;
+}
+
+#page5backbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page5backbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page5nextbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    right: 0;
+    margin-top: 84px;
+    z-index: 8;
+    margin-right: 21px;
+    float: right;
+}
+
+#page5nextbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page5nextbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page6nextbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    right: 0;
+    margin-top: 84px;
+    z-index: 8;
+    margin-right: 21px;
+    float: right;
+}
+
+#page6nextbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page6nextbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
+
+#page7nextbutton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: var(--button-background);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--text-color);
+    position: relative;
+    transition: 0.2s;
+    right: 0;
+    margin-top: 84px;
+    z-index: 8;
+    margin-right: 21px;
+    float: right;
+}
+
+#page7nextbutton:hover {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--buttonhover-background);
+}
+
+#page7nextbutton:active {
+    transform: scale(1.05);
+    transition: 0.2s;
+    background: var(--navbar-background);
+}
